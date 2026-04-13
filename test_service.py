@@ -1,17 +1,17 @@
-def calculate_technician_fee(hours_worked, is_emergency=False):
-    # SQA Rule 1: Catch invalid system inputs
-    if hours_worked < 0:
-        raise ValueError("Hours worked cannot be negative")
+import unittest
+from service_calc import calculate_technician_fee
 
-    base_visit_fee = 500  # Rs
-    hourly_rate = 800     # Rs per hour
+class TestTechnicianBilling(unittest.TestCase):
+    
+    def test_standard_visit(self):
+        self.assertEqual(calculate_technician_fee(2, False), 2100)
 
-    # SQA Rule 2: Apply standard billing math
-    total_fee = base_visit_fee + (hours_worked * hourly_rate)
+    def test_emergency_visit(self):
+        self.assertEqual(calculate_technician_fee(1, True), 2300)
 
-    # SQA Rule 3: Apply business conditions (Emergency surcharge)
-    if is_emergency:
-        total_fee += 1000
+    def test_invalid_negative_hours(self):
+        with self.assertRaises(ValueError):
+            calculate_technician_fee(-1, False)
 
-    return total_fee
-#the test file
+if __name__ == '__main__':
+    unittest.main()
