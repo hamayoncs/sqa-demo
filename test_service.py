@@ -14,3 +14,4 @@ def calculate_technician_fee(hours_worked, is_emergency=False):
         total_fee += 1000
 
     return total_fee
+#the test file
