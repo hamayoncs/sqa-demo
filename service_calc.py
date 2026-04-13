@@ -1,3 +1,5 @@
+#a functional to calculate technician fee
+
 def calculate_technician_fee(hours_worked, is_emergency=False):
     if hours_worked < 0:
         raise ValueError("Hours worked cannot be negative")
