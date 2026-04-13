@@ -10,6 +10,6 @@ def calculate_technician_fee(hours_worked, is_emergency=False):
     total_fee = base_visit_fee + (hours_worked * hourly_rate)
 
     if is_emergency:
-        total_fee += 1000
+        total_fee -= 1000
 
     return total_fee
