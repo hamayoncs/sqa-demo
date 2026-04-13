@@ -1,6 +1,6 @@
 import unittest
 from service_calc import calculate_technician_fee
-
+#unit tests
 class TestTechnicianBilling(unittest.TestCase):
     
     def test_standard_visit(self):
@@ -15,3 +15,5 @@ class TestTechnicianBilling(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+    
